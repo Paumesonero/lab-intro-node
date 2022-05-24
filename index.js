@@ -20,13 +20,46 @@ class SortedList {
     }
   }
 
-  max() { }
+  max() {
+    if (this.items.length >= 1) {
+      return Math.max(...this.items)
+    } else {
+      throw new Error('EmptySortedList');
+    }
+  }
 
-  min() { }
+  min() {
+    if (this.items.length >= 1) {
+      return Math.min(...this.items)
+    } else {
+      throw new Error('EmptySortedList');
+    }
+  }
 
-  sum() { }
+  sum() {
+    if (this.items.length >= 1) {
+      let totalSum = this.items.reduce(function (a, b) {
+        return a + b
+      });
+      return totalSum
+    }
+    else {
+      return 0;
+    }
+  }
 
-  avg() { }
+
+  avg() {
+    if (this.items.length >= 1) {
+      let totalSum = this.items.reduce(function (a, b) {
+        return a + b
+      });
+      return totalSum / this.items.length
+    }
+    else {
+      throw new Error('EmptySortedList');
+    }
+  }
 }
 
 module.exports = SortedList;
